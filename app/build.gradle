@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -46,4 +47,13 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:1.19.0-RC2"
+
+    //retrofit
+    implementation"com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    //card View
+    implementation 'com.android.support:cardview-v7:31.0.0'
+
+    //Picasso to show flags and images
+    implementation 'com.squareup.picasso:picasso:2.8'
 }
