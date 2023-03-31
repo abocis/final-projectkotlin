@@ -5,11 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 data class HomeScore(
     @SerializedName("current")
-    val current: Int? = 0,
+    val current: Int = 0,
     @SerializedName("display")
-    val display: Int? = 0,
-    @SerializedName("normaltime")
-    val normaltime: Int? = 0,
+    val display: Int = 0,
     @SerializedName("period1")
-    val period1: Int? = 0
+    val period1: Int = 0
 )

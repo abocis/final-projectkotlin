@@ -1,30 +1,27 @@
 package se.linerotech.myapplication.model
 
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
-
 
 data class UniqueTournament(
     @SerializedName("category")
-    val category: Category? = Category(),
+    val category: Category = Category(),
     @SerializedName("country")
-    val country: CountryXX? = CountryXX(),
+    val country: CountryXX = CountryXX(),
     @SerializedName("crowdsourcingEnabled")
-    val crowdsourcingEnabled: Boolean? = false,
+    val crowdsourcingEnabled: Boolean = false,
     @SerializedName("displayInverseHomeAwayTeams")
-    val displayInverseHomeAwayTeams: Boolean? = false,
+    val displayInverseHomeAwayTeams: Boolean = false,
     @SerializedName("hasEventPlayerStatistics")
-    val hasEventPlayerStatistics: Boolean? = false,
+    val hasEventPlayerStatistics: Boolean = false,
     @SerializedName("hasPerformanceGraphFeature")
-    val hasPerformanceGraphFeature: Boolean? = false,
+    val hasPerformanceGraphFeature: Boolean = false,
     @SerializedName("id")
-    val id: Int? = 0,
+    val id: Int = 0,
     @SerializedName("name")
-    val name: String? = "",
+    val name: String = "",
     @SerializedName("slug")
-    val slug: String? = "",
+    val slug: String = "",
     @SerializedName("userCount")
-    val userCount: Int? = 0
+    val userCount: Int = 0
 )

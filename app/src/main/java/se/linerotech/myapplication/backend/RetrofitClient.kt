@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    private const val BASE_URL = "https://footapi7.p.rapidapi.com/"
+    private const val BASE_URL = "https://footapi7.p.rapidapi.com"
 
     val instance: Endpoint by lazy {
         val retrofit = Retrofit.Builder()
@@ -15,6 +15,4 @@ object RetrofitClient {
 
         retrofit.create(Endpoint::class.java)
     }
-
-
 }

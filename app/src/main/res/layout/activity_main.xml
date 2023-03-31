@@ -11,7 +11,8 @@
         android:id="@+id/mainActivityProgressbar"
         android:layout_gravity="center"
         android:layout_width="50dp"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:visibility="visible"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainActivityRecyclerView"

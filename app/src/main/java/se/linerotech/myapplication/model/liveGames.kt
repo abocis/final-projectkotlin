@@ -3,7 +3,7 @@ package se.linerotech.myapplication.model
 
 import com.google.gson.annotations.SerializedName
 
-data class RoundInfo(
-    @SerializedName("round")
-    val round: Int = 0
+data class liveGames(
+    @SerializedName("events")
+    val events: List<Event> = listOf()
 )

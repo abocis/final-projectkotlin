@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Live score</string>
     <string name="liveMatches">Live Matches</string>
+    <string name="unable_to_get_livevent">Unable to get games</string>
+    <string name="internal_server_error">Internal server Error</string>
+    <string name="unauthorized">Unauthorized</string>
+    <string name="forbidden">Forbidden</string>
+    <string name="game_not_found">game not found</string>
+    <string name="try_another_game">Try another game</string>
 </resources>

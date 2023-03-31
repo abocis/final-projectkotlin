@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Changes(
     @SerializedName("changeTimestamp")
-    val changeTimestamp: Int? = 0,
+    val changeTimestamp: Int = 0,
     @SerializedName("changes")
-    val changes: List<String?>? = listOf()
+    val changes: List<String> = listOf()
 )

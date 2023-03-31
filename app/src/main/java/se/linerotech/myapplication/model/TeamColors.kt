@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 data class TeamColors(
     @SerializedName("primary")
-    val primary: String? = "",
+    val primary: String = "",
     @SerializedName("secondary")
-    val secondary: String? = "",
+    val secondary: String = "",
     @SerializedName("text")
-    val text: String? = ""
+    val text: String = ""
 )
