@@ -19,7 +19,8 @@ import se.linerotech.myapplication.model.liveGames
 
 class MainActivity : AppCompatActivity() {
 
-    var progressBar: ProgressBar? = null
+    private var progressBar: ProgressBar? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +32,7 @@ class MainActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.mainActivityProgressbar)
 
         getLiveEvent()
-
     }
-
-
 
     //get data for live matches
     private fun getLiveEvent() {
@@ -51,15 +49,13 @@ class MainActivity : AppCompatActivity() {
                         Log.d(TAG, "Response successful")
 
                         //show the item to the user
-                        val events = response.body()?.events?.distinctBy { it.homeScore }?: emptyList()
+                        val events = response.body()?.events ?: emptyList()
 
                         showItems(events)
-
 
                     }else{
 
                         Log.d(TAG, "Response unsuccessful. Error code: ${response.code()}")
-
 
                         //Created a message based on the error code
                         val message = when(response.code()){
@@ -83,8 +79,6 @@ class MainActivity : AppCompatActivity() {
                     Log.e(TAG, "Error getting events: ${t.localizedMessage}")
                 }
             })
-
-
     }
     private fun showItems(Events: List<Event>){
         //stop the progress bar
@@ -101,13 +95,10 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(context)
             visibility = View.VISIBLE
         }
-
     }
 
     companion object {
         private val TAG = MainActivity::class.java.simpleName
     }
-
-
 
 }

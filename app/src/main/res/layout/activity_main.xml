@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.MainActivity">
 
-    <ProgressBar
-        android:id="@+id/mainActivityProgressbar"
-        android:layout_gravity="center"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:visibility="visible"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainActivityToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:titleTextColor="@android:color/white"
+        android:elevation="4dp"
+        app:title="@string/liveMatches" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainActivityRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"/>
+        android:layout_below="@id/mainActivityToolbar"
+        android:visibility="gone" />
 
+    <ProgressBar
+        android:id="@+id/mainActivityProgressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible" />
 
-
-</LinearLayout>
+</RelativeLayout>
