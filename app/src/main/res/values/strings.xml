@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Live score</string>
+    <string name="app_name">Bouki</string>
     <string name="liveMatches"> Current Matches</string>
-    <string name="unable_to_get_livevent">Unable to get games</string>
+    <string name="unable_to_get_livevent">NO LIVE GAME TO SHOW </string>
     <string name="internal_server_error">Internal server Error</string>
     <string name="unauthorized">Unauthorized</string>
     <string name="forbidden">Forbidden</string>

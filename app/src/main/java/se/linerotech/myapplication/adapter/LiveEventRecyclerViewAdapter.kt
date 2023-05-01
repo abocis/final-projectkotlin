@@ -27,7 +27,8 @@ class LiveEventRecyclerViewAdapter(private val listOfEvent: List<Event>): Recycl
         holder.awayTeamTextView.text = games.awayTeam.shortName
         holder.scoreTextView.text = "${games.homeScore.current} - ${games.homeScore.current}"
         holder.tournament.text = games.tournament.name
-        holder.status.text = games.status.description; games.status.type
+        holder.status.text = "${games.status.description}   ${games.status.type}"
+
 
 
         val calendar = Calendar.getInstance()
@@ -46,6 +47,7 @@ class LiveEventRecyclerViewAdapter(private val listOfEvent: List<Event>): Recycl
         val matchTimeTextView: TextView = view.findViewById(R.id.textViewTime)
         val tournament: TextView = view.findViewById(R.id.textViewEventTitle)
         val status: TextView = view.findViewById(R.id.textViewVenue)
+
 
         }
 

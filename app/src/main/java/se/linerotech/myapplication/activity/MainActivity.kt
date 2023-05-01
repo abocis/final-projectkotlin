@@ -26,10 +26,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //set the title of the actionbar
-        supportActionBar?.title = getString(R.string.liveMatches)
+        supportActionBar?.title = getString(R.string.app_name)
 
         //initialize variables
-        progressBar = findViewById(R.id.mainActivityProgressbar)
+      //  progressBar = findViewById(R.id.mainActivityProgressbar)
 
         getLiveEvent()
     }
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
                     if(response.isSuccessful){
 
-                        Log.d(TAG, "Response successful")
+                      //  Log.d(TAG, "Response successful")
 
                         //show the item to the user
                         val events = response.body()?.events ?: emptyList()
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
                     }else{
 
-                        Log.d(TAG, "Response unsuccessful. Error code: ${response.code()}")
+                       // Log.d(TAG, "Response unsuccessful. Error code: ${response.code()}")
 
                         //Created a message based on the error code
                         val message = when(response.code()){
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun showItems(Events: List<Event>){
         //stop the progress bar
-        progressBar?.visibility = View.GONE
+       // progressBar?.visibility = View.GONE
 
         //initialize the adapter
         val recyclerViewAdapter = LiveEventRecyclerViewAdapter(Events)

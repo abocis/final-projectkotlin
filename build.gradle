@@ -15,12 +15,13 @@ buildscript {
 
 plugins {
     id "io.gitlab.arturbosch.detekt" version "1.19.0-RC2"
+    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
 }
 
 allprojects {
     apply plugin: "io.gitlab.arturbosch.detekt"
+
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+
+
