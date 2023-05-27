@@ -8,5 +8,7 @@
     <string name="game_not_found">game not found</string>
     <string name="try_another_game">Try another game</string>
     <string name="score_format">%d - %d</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
