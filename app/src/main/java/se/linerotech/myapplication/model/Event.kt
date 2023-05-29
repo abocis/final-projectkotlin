@@ -1,7 +1,10 @@
 package se.linerotech.myapplication.model
 
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Event(
     @SerializedName("awayScore")

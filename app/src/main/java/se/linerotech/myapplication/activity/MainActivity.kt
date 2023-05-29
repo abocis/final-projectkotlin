@@ -1,25 +1,23 @@
 package se.linerotech.myapplication.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
-import se.linerotech.myapplication.R
-import se.linerotech.myapplication.backend.RetrofitClient
-import se.linerotech.myapplication.model.Event
 import retrofit2.Callback
 import retrofit2.Response
+import se.linerotech.myapplication.R
 import se.linerotech.myapplication.adapter.LiveEventRecyclerViewAdapter
+import se.linerotech.myapplication.backend.RetrofitClient
+import se.linerotech.myapplication.model.Event
 import se.linerotech.myapplication.model.liveGames
 
 class MainActivity : AppCompatActivity() {
-
-    private var progressBar: ProgressBar? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                         //show the item to the user
                         val events = response.body()?.events ?: emptyList()
 
-                        showItems(events)
+                        displayEvents(events, this@MainActivity)
 
                     }else{
 
@@ -80,13 +78,26 @@ class MainActivity : AppCompatActivity() {
                 }
             })
     }
-    private fun showItems(Events: List<Event>){
-        //stop the progress bar
-       // progressBar?.visibility = View.GONE
+    private fun displayEvents(events: List<Event>, mainActivity: MainActivity){
 
-        //initialize the adapter
-        val recyclerViewAdapter = LiveEventRecyclerViewAdapter(Events)
+        //initialize the adapter with the event list and set up the item click listener
+        val recyclerViewAdapter = LiveEventRecyclerViewAdapter(events).apply {
+            setOnItemListener(object : LiveEventRecyclerViewAdapter.OnItemClickListener {
 
+                override fun onItemClick(position: Int) {
+                    //   Toast.makeText(mainActivity, "Clicked: $position", Toast.LENGTH_SHORT).show()
+
+                    //handle item click event
+
+                    val selectedEvent = events[position]
+                    EventStorage.setEvent(selectedEvent)
+                    val intent = Intent(this@MainActivity, GameDetailsActivity::class.java)
+
+                    startActivity(intent)
+
+                }
+            })
+        }
         // connect the adapter to the recycler view
         val recyclerView = findViewById<RecyclerView>(R.id.mainActivityRecyclerView)
         recyclerView?.apply {
@@ -94,6 +105,17 @@ class MainActivity : AppCompatActivity() {
             adapter = recyclerViewAdapter
             layoutManager = LinearLayoutManager(context)
             visibility = View.VISIBLE
+        }
+    }
+
+    object EventStorage{
+        private var event: Event? = null
+        fun setEvent(event: Event){
+            this.event= event
+        }
+
+        fun getEvent(): Event?{
+            return event
         }
     }
 
