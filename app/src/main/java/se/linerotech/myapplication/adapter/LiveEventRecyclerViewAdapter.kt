@@ -27,10 +27,7 @@ class LiveEventRecyclerViewAdapter(private val listOfEvent: List<Event>):
             itemView.setOnClickListener {
                 listener.onItemClick(adapterPosition)
             }
-
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
